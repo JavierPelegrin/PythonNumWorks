@@ -1,0 +1,24 @@
+def codeaffine(a,b) :
+  mot=input("Mot a coder?")
+  for n in mot :
+    k=ord(n)-65
+    print(n,"->",k,"->",a*k+b,"->",(a*k+b)%26,"->",chr(65+(a*k+b)%26))
+    x=0
+  while (a*x%26!=1):
+    x=x+1
+  decoa=x
+  decob=(-decoa)*b
+  while decob<0 and decob<26:
+    decob=decob+26
+  print("\n")
+  print("Fonction decodage")
+  print("f(x)",decoa,"x+",decob)
+  print(" \n")
+  mot=input("Mot a decoder?")
+  for n in mot :
+    k=ord(n)-65
+    print(n,"->",k,"->",a*decoa+decob,"->",(a*decoa+decob)%26,"->",chr(65+(decoa*k+decob)%26))
+
+a=int(input("a?"))
+b=int(input("b?"))
+codeaffine(a,b)
